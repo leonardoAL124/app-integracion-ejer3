@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetallesPeliculasComponent {
 
+
   ruta = inject(ActivatedRoute)
 
   peliculas = [
@@ -30,35 +31,41 @@ export class DetallesPeliculasComponent {
       id: "p03",
       nombre: 'Depredador',
       fecha: "1985",
-      url:"https://cloudfront-eu-central-1.images.arcpublishing.com/diarioas/OZOILOQX6BLA3BY4X67QXBOB4E.jpg"
+      url: "https://cloudfront-eu-central-1.images.arcpublishing.com/diarioas/OZOILOQX6BLA3BY4X67QXBOB4E.jpg"
     },
     {
       id: "p04",
       nombre: 'Titanic',
       fecha: "2001",
-      url:"https://mitsloanreview.mx/wp-content/uploads/2023/02/james-cameron-secreto-titanic-cambio-climatico.jpg"
+      url: "https://mitsloanreview.mx/wp-content/uploads/2023/02/james-cameron-secreto-titanic-cambio-climatico.jpg"
     },
     {
       id: "p05",
       nombre: 'Jhon Wick',
       fecha: "2014",
-      url:"https://www.mundodeportivo.com/alfabeta/hero/2023/10/1366_2000-2.1696580965.0154.jpeg?width=768&aspect_ratio=16:9&format=nowebp"
+      url: "https://www.mundodeportivo.com/alfabeta/hero/2023/10/1366_2000-2.1696580965.0154.jpeg?width=768&aspect_ratio=16:9&format=nowebp"
     },
   ]
 
-  pelicula:any
-  id:any
-  ngOnInit(){
-    this.ruta.params.subscribe(p=>{
+  pelicula: any
+  id: any
+  ngOnInit() {
+    this.ruta.params.subscribe(p => {
       console.log(p['idPeliculas']);
       this.id = p['idPeliculas']
 
       this.peliculas.forEach(element => {
-        if(element.id == this.id){
+        if (element.id == this.id) {
           this.pelicula = element
-
         }
       });
+
+      
     })
   }
+
+  mensaje() {
+    alert("PELÍCULAS")
+  }
+
 }

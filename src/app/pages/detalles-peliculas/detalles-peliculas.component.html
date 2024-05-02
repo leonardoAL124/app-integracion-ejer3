@@ -1,3 +1,12 @@
-<p>detalles-peliculas works!</p>
-{{pelicula | json}}
-<h1>Nombre :</h1>
+
+<div class="centro">
+    <div class="card" style="width:600px">
+        <img class="card-img-top" src="{{pelicula.url}}" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title">{{pelicula.nombre}}</h4>
+            <p class="card-text">{{pelicula.fecha}}</p>
+            <button class="btn btn-primary" (click)="mensaje()">Ver</button>
+            <a href="peliculas"  class="btn btn-danger">Regresar</a>
+        </div>
+    </div>
+</div>

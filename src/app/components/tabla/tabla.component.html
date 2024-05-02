@@ -1,3 +1,7 @@
+<input type="text" [(ngModel)] = 'filtro'>
+
+
+
 <table class="table">
   <thead>
     <tr>
@@ -11,7 +15,7 @@
   <tbody>
     @for (item of peliculas; track item) {
     <tr>
-      @if( item.fecha > "1990" ){
+      @if( +item.fecha > filtro ){
       <th scope="row">{{item.id}}</th>
       <td>{{item.nombre}}</td>
       <td>{{item.fecha}}</td>
