@@ -49,6 +49,7 @@ export class DetallesPeliculasComponent {
 
   pelicula: any
   id: any
+
   ngOnInit() {
     this.ruta.params.subscribe(p => {
       console.log(p['idPeliculas']);
@@ -59,6 +60,9 @@ export class DetallesPeliculasComponent {
           this.pelicula = element
         }
       });
+
+      console.log(  this.peliculas.find(this.id) );
+      
 
       
     })
